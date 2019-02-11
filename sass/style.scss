@@ -1,0 +1,92 @@
+$green1: #A8DB92;
+$green2: #76B75B;
+$green3: #4E9231;
+$green4: #2D6E12;
+$green5: #164900;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  width: 900px;
+}
+
+h1 {
+  color: $green5;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+button {
+  color: $green1;
+  text-transform: uppercase;
+  width: 200px;
+  height: 75px;
+  background-color: $green4;
+  font-size: 25px;
+  cursor: pointer;
+  transition: color .5s, background-color .5s;
+  border: 5px solid $green3;
+  border-radius: 50%;
+  &:hover, &:active {
+    color: $green2;
+    background-color: $green5;
+  }
+}
+
+.round {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: $green5;
+  font-size: 30px;
+  width: 900px;
+  height: 120px;
+  border: 5px solid $green4;
+}
+
+.row {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.score {
+  display: flex;
+  height: 90px;
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  color: $green1;
+  background-color: $green5;
+}
+
+.score1 {
+  @extend .score;
+  width: 40%;
+}
+
+.score2 {
+  @extend .score;
+  width: 20%;
+}
+
+.rounds {
+  @extend .score;
+  width: 50%;
+}
+
+.newGame {
+  text-align: center;  
+  width: 50%;
+}
