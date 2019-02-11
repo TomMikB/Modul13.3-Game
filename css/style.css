@@ -1,83 +1,25 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-body {
-  width: 900px;
-}
+body { width: 900px; }
 
-h1 {
-  color: #164900;
-  font-size: 50px;
-  text-align: center;
-  text-transform: uppercase;
-}
+h1 { color: #164900; font-size: 50px; text-align: center; text-transform: uppercase; }
 
-.btn {
-  display: flex;
-  justify-content: space-around;
-  margin: 50px 0;
-}
+.btn { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; margin: 50px 0; }
 
-button {
-  color: #A8DB92;
-  text-transform: uppercase;
-  width: 200px;
-  height: 75px;
-  background-color: #2D6E12;
-  font-size: 25px;
-  cursor: pointer;
-  transition: color .5s, background-color .5s;
-  border: 5px solid #4E9231;
-  border-radius: 50%;
-}
-button:hover, button:active {
-  color: #76B75B;
-  background-color: #164900;
-}
+button { color: #A8DB92; text-transform: uppercase; width: 200px; height: 75px; background-color: #2D6E12; font-size: 25px; cursor: pointer; transition: color .5s, background-color .5s; border: 5px solid #4E9231; border-radius: 50%; }
 
-.round {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  color: #164900;
-  font-size: 30px;
-  width: 900px;
-  height: 120px;
-  border: 5px solid #2D6E12;
-}
+button:hover, button:active { color: #76B75B; background-color: #164900; }
 
-.row {
-  height: 100px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+.round { display: -ms-flexbox; display: flex; text-align: center; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; color: #164900; font-size: 30px; width: 900px; height: 120px; border: 5px solid #2D6E12; }
 
-.score, .score1, .score2, .rounds {
-  display: flex;
-  height: 90px;
-  font-size: 25px;
-  justify-content: center;
-  align-items: center;
-  color: #A8DB92;
-  background-color: #164900;
-}
+.row { height: 100px; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; -ms-flex-align: center; align-items: center; }
 
-.score1 {
-  width: 40%;
-}
+.score, .score1, .score2, .rounds { display: -ms-flexbox; display: flex; height: 90px; font-size: 25px; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; color: #A8DB92; background-color: #164900; }
 
-.score2 {
-  width: 20%;
-}
+.score1 { width: 40%; }
 
-.rounds {
-  width: 50%;
-}
+.score2 { width: 20%; }
 
-.newGame {
-  text-align: center;
-  width: 50%;
-}
+.rounds { width: 50%; }
+
+.newGame { text-align: center; width: 50%; }
