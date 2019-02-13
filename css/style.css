@@ -1,6 +1,6 @@
 * { box-sizing: border-box; }
 
-body { width: 900px; }
+.container { width: 900px; background-color: #A8DB92; }
 
 h1 { color: #164900; font-size: 50px; text-align: center; text-transform: uppercase; }
 

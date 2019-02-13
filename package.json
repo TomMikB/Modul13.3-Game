@@ -1,7 +1,7 @@
 {
   "name": "Modul13.3-Game",
   "version": "1.0.0",
-  "description": "paper-rock-scissors",
+  "description": "rock-paper-scissors-lizard-spock",
   "main": "index.js",
   "scripts": {
     "test": "npm-run-all test:*",

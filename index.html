@@ -6,33 +6,37 @@
       <title>Modul 13.3</title>
   </head>
   <body>
-    <h1>Modul 13.3 - game</h1>
-    <div class="btn">
-      <button id="paperButton">paper</button>
-      <button id="rockButton">rock</button>
-      <button id="scissorsButton">scissors</button>
+    <div class="container">
+      <h1>Modul 13.3 - game</h1>
+      <div class="btn">
+        <button id="paperButton" data-move="PAPER" class="player-move">paper</button>
+        <button id="rockButton" data-move="ROCK" class="player-move">rock</button>
+        <button id="scissorsButton" data-move="SCISSORS" class="player-move">scissors</button>
+      </div>
+      <div class="round" id="output">
+      </div>
+      <div class="row">
+        <div class="score1">
+          <p>Player</p>
+        </div>
+        <div class="score2" id="result">
+          <p>0 - 0</p>
+        </div>
+        <div class="score1">
+          <p>Computer</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="newGame" id="startGame">
+          <button>NEW GAME</button>
+        </div>
+        <div class="rounds" id="roundsNo">
+          <p>&#8592;&#8592;&#8592; Game start</p>
+        </div>
+      </div>
     </div>
-    <div class="round" id="output">
-    </div>
-    <div class="row">
-      <div class="score1">
-        <p>Player</p>
-      </div>
-      <div class="score2" id="result">
-        <p>0 - 0</p>
-      </div>
-      <div class="score1">
-        <p>Computer</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="newGame" id="startGame">
-        <button>NEW GAME</button>
-      </div>
-      <div class="rounds" id="roundsNo">
-        <p>&#8592;&#8592;&#8592; Game start<p>
-      </div>
-    </div>
+<!--    <div id="testtxt">
+    </div>-->
     <script  src="js/index.js"></script>
   </body>
 </html>

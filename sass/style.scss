@@ -8,8 +8,9 @@ $green5: #164900;
   box-sizing: border-box;
 }
 
-body {
+.container {
   width: 900px;
+  background-color: $green1;
 }
 
 h1 {
