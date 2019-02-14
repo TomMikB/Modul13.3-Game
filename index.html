@@ -2,16 +2,25 @@
   <html>
     <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <title>Modul 13.3</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container game">
       <h1>Modul 13.3 - game</h1>
       <div class="btn">
         <button id="paperButton" data-move="PAPER" class="player-move">paper</button>
-        <button id="rockButton" data-move="ROCK" class="player-move">rock</button>
+      </div>
+      <div class="btn">
         <button id="scissorsButton" data-move="SCISSORS" class="player-move">scissors</button>
+        <button class="btn-hidden1"></button>
+        <button id="rockButton" data-move="ROCK" class="player-move">rock</button>
+      </div>
+      <div class="btn">
+        <button id="spockButton" data-move="SPOCK" class="player-move">spock</button>
+        <button class="btn-hidden2"></button>
+        <button id="lizardsButton" data-move="LIZARD" class="player-move">lizard</button>
       </div>
       <div class="round" id="output">
       </div>
@@ -35,8 +44,29 @@
         </div>
       </div>
     </div>
-<!--    <div id="testtxt">
-    </div>-->
+    <div class="container rules">
+      <h2>rules</h2>
+      <p>SCISSORS cuts PAPER</p>
+      <p>PAPER covers ROCK</p>
+      <p>ROCK crushes LIZARD</p>
+      <p>LIZARD poisons SPOCK</p>
+      <p>SPOCK smashes SCISSORS</p>
+      <p>SCISSORS decapitates LIZARD</p>
+      <p>LIZARD eats PAPER</p>
+      <p>PAPER disproves SPOCK</p>
+      <p>SPOCK vaporizes ROCK</p>
+      <p>and as it always has:</p>
+      <p>ROCK crushes SCISSORS</p>
+      <iframe src="https://www.youtube.com/embed/XQhIsKZokHU"></iframe>
+    </div>
+    <div class="overlay" id="modal-overlay">
+      <div class="modal" id="modal-score">
+        <a href="#" class="close">X</a>
+        <header>Score</header>
+        <div class="score-show" id="scoreOutput">
+        </div>
+      </div>
+    </div>
     <script  src="js/index.js"></script>
   </body>
 </html>

@@ -1,2 +1,2 @@
 # Modul13.3-Game
-paper-rock-scissors
+rock-paper-scissors-lizard-spock

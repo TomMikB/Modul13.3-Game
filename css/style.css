@@ -1,16 +1,32 @@
 * { box-sizing: border-box; }
 
-.container { width: 900px; background-color: #A8DB92; }
+.container { height: 850px; }
 
-h1 { color: #164900; font-size: 50px; text-align: center; text-transform: uppercase; }
+.game { background-color: #A8DB92; }
 
-.btn { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; margin: 50px 0; }
+.rules { text-align: center; background-color: #76B75B; }
 
-button { color: #A8DB92; text-transform: uppercase; width: 200px; height: 75px; background-color: #2D6E12; font-size: 25px; cursor: pointer; transition: color .5s, background-color .5s; border: 5px solid #4E9231; border-radius: 50%; }
+.rules p { font-size: 18px; color: #164900; }
 
-button:hover, button:active { color: #76B75B; background-color: #164900; }
+.rules iframe { border: none; }
 
-.round { display: -ms-flexbox; display: flex; text-align: center; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; color: #164900; font-size: 30px; width: 900px; height: 120px; border: 5px solid #2D6E12; }
+h1 { color: #2D6E12; font-size: 50px; text-align: center; text-transform: uppercase; }
+
+h2 { color: #164900; font-size: 30px; text-align: center; text-transform: uppercase; }
+
+.btn { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; margin: 50px 0; }
+
+button:not(.btn-hidden):not(.btn-hidden1):not(.btn-hidden2) { outline: none; color: #A8DB92; text-transform: uppercase; width: 200px; height: 75px; background-color: #2D6E12; font-size: 25px; cursor: pointer; transition: color .5s, background-color .5s; border: 5px solid #4E9231; border-radius: 50%; }
+
+button:not(.btn-hidden):not(.btn-hidden1):not(.btn-hidden2):hover, button:not(.btn-hidden):not(.btn-hidden1):not(.btn-hidden2):active { color: #76B75B; background-color: #164900; }
+
+.btn-hidden, .btn-hidden1, .btn-hidden2 { outline: none; height: 75px; color: transparent; background-color: transparent; border: none; }
+
+.btn-hidden1 { width: 200px; }
+
+.btn-hidden2 { width: 50px; }
+
+.round { display: -ms-flexbox; display: flex; text-align: center; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; color: #164900; font-size: 30px; width: 100%; height: 120px; border: 5px solid #2D6E12; }
 
 .row { height: 100px; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; -ms-flex-align: center; align-items: center; }
 
@@ -23,3 +39,25 @@ button:hover, button:active { color: #76B75B; background-color: #164900; }
 .rounds { width: 50%; }
 
 .newGame { text-align: center; width: 50%; }
+
+.overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); }
+
+.overlay.show { display: block; }
+
+.modal { display: none; background: #2D6E12; color: #A8DB92; min-width: 250px; position: absolute; top: 50%; left: 50%; transform: translate3d(-50%, -50%, 0); }
+
+.modal.show { display: block; }
+
+.modal .close { font-size: 30px; line-height: 40px; font-weight: bold; position: absolute; right: 0; top: 0; padding: 0 10px; color: #A8DB92; text-decoration: none; }
+
+.modal header { font-size: 30px; line-height: 40px; min-height: 30px; font-weight: bold; padding: 0 30px; }
+
+.modal .score-show { padding: 20px; text-align: center; min-height: 50px; font-size: 25px; color: #76B75B; background-color: #164900; }
+
+@media (max-width: 1549px) { .game, .rules { min-width: 250px; }
+  iframe { width: 250px; height: 200px; } }
+
+@media (min-width: 1550px) { .container { float: left; }
+  .game { width: 900px; }
+  .rules { width: 600px; }
+  iframe { width: 500px; height: 300px; } }
