@@ -11,16 +11,18 @@
     playerScore: 0, 
     computerScore: 0, 
     noOfRounds: 0, 
-    startGame: false
+    totalRoundNumber: 0, 
+    startGame: false, 
+    progress: []
   };
   var playerChoice = document.querySelectorAll('.player-move');
   var overlayShow = document.getElementById('modal-overlay');
   var scoreShow = document.getElementById('modal-score');
   var closeButtons = document.querySelectorAll('.modal .close');
   var modals = document.querySelectorAll('.modal');
-  
+
   params.message.innerHTML = 'Welcome! Press NEW GAME to start game.';
-  
+
 /*computer move*/
   var computerMoveGenerator = function () {
     var computerMove = Math.floor(Math.random() * 5 + 1);
@@ -39,7 +41,7 @@
 /*round winner*/
   var playerResult = function (playerMove, computerMove) {
     if (computerMove == playerMove) {
-      return 'DRAW:';
+      return 'DRAW';
     } else if (
       (computerMove === 'PAPER' && (playerMove === 'ROCK' || playerMove === 'SPOCK')) ||
       (computerMove === 'ROCK' && (playerMove === 'SCISSORS' || playerMove === 'LIZARD')) ||
@@ -48,26 +50,41 @@
       (computerMove === 'SPOCK' && (playerMove === 'SCISSORS' || playerMove === 'ROCK'))
     ) {
       params.computerScore++;
-      return 'YOU LOST:';
+      return 'YOU LOST';
     }
     params.playerScore++;
-    return 'YOU WON:';
+    return 'YOU WON';
   };
   
-/*win message*/
+/*round win message*/
   var printResult = function (playerMove, computerMove, playerRoundResult) {
-    params.message.innerHTML = playerRoundResult + ' you played ' + playerMove + ', computer played ' + computerMove + '.';
+    params.message.innerHTML = playerRoundResult + ': you played ' + playerMove + ', computer played ' + computerMove + '.';
     params.gameScore.innerHTML = params.playerScore + ' - ' + params.computerScore;
+    params.totalRoundNumber++;
+    params.progress.push(params.totalRoundNumber, playerMove, computerMove, playerRoundResult, params.playerScore + ' - ' + params.computerScore);
+  /*end game modal*/
+    if (params.playerScore == params.noOfRounds || params.computerScore == params.noOfRounds) {
+      overlayShow.classList.add('show');
+      scoreShow.classList.add('show');
+  /*game table - moves and score*/
+      var tableScore = document.getElementById('scoreTable');
+      var tableHeader = '<tr><th>round:</th><th>player move:</th><th>computer move:</th><th>round result:</th><th>total score:</th></tr>';
+      var tableResult = '';
+      for (var rows = 0; rows < params.totalRoundNumber; rows++) {
+        tableResult += '<tr>';
+        for (var cols = rows*5; cols < (rows+1)*5; cols++) {
+          tableResult += '<td>' + params.progress[cols] + '</td>';
+        }
+        tableResult += '</tr>';
+      }
+      tableScore.innerHTML = '<table>' + tableHeader + '<tbody>' + tableResult + '</tbody></table>';
+      params.startGame = false;
+    }
+  /*end game message*/
     if (params.playerScore == params.noOfRounds) {
-      overlayShow.classList.add('show');
-      scoreShow.classList.add('show');
-      params.startGame = false;
-      params.scoreMessage.innerHTML += '<br> CONGRATULATIONS! YOU WON THE GAME!!!';
+      params.scoreMessage.innerHTML += 'CONGRATULATIONS! YOU WON THE GAME!!!';
     } else if (params.computerScore == params.noOfRounds) {
-      overlayShow.classList.add('show');
-      scoreShow.classList.add('show');
-      params.startGame = false;
-      params.scoreMessage.innerHTML += '<br> SORRY! YOU LOST THE GAME!!!';
+      params.scoreMessage.innerHTML += 'SORRY! YOU LOST THE GAME!!!';
     }
   };
 
@@ -83,11 +100,11 @@
     var startMessage = '<br>GAME OVER! Please press the NEW GAME button!'
     if (params.message.innerHTML.indexOf('GAME OVER') === -1) {
       params.message.innerHTML += startMessage;
-    };
+    }
   };
   
 /*player play*/
-  for(var i = 0; i < playerChoice.length; i++){
+  for (var i = 0; i < playerChoice.length; i++){
     playerChoice[i].addEventListener('click', function(event) {
       if (params.startGame) {
         playerDecision(event.target.getAttribute('data-move'));
@@ -101,6 +118,8 @@
   params.howManyRounds.addEventListener('click', function() {
     params.playerScore = 0;
     params.computerScore = 0;
+    params.progress = [];
+    params.totalRoundNumber = 0;
     overlayShow.classList.remove('show');
     scoreShow.classList.remove('show');
     params.scoreMessage.innerHTML = '';

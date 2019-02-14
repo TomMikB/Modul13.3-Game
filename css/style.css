@@ -26,7 +26,7 @@ button:not(.btn-hidden):not(.btn-hidden1):not(.btn-hidden2):hover, button:not(.b
 
 .btn-hidden2 { width: 50px; }
 
-.round { display: -ms-flexbox; display: flex; text-align: center; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; color: #164900; font-size: 30px; width: 100%; height: 120px; border: 5px solid #2D6E12; }
+.round { display: -ms-flexbox; display: flex; text-align: center; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; color: #164900; font-size: 30px; width: 100%; min-height: 120px; border: 5px solid #2D6E12; }
 
 .row { height: 100px; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; -ms-flex-align: center; align-items: center; }
 
@@ -52,7 +52,17 @@ button:not(.btn-hidden):not(.btn-hidden1):not(.btn-hidden2):hover, button:not(.b
 
 .modal header { font-size: 30px; line-height: 40px; min-height: 30px; font-weight: bold; padding: 0 30px; }
 
-.modal .score-show { padding: 20px; text-align: center; min-height: 50px; font-size: 25px; color: #76B75B; background-color: #164900; }
+.modal table { padding: 20px 0; border-collapse: collapse; border: 1px solid #4E9231; background-color: #A8DB92; }
+
+.modal table th, .modal table td { border: 1px solid #4E9231; min-width: 200px; text-align: center; vertical-align: middle; }
+
+.modal table tbody { display: block; max-height: 150px; overflow-y: auto; }
+
+.modal table th { text-transform: uppercase; color: #164900; height: 40px; font-size: 18px; }
+
+.modal table td { color: #2D6E12; height: 25px; font-size: 16px; }
+
+.modal .score-show { padding: 20px; text-align: center; font-size: 25px; color: #76B75B; background-color: #164900; }
 
 @media (max-width: 1549px) { .game, .rules { min-width: 250px; }
   iframe { width: 250px; height: 200px; } }
